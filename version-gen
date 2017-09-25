@@ -4,7 +4,7 @@ VF="`dirname "$0"`/dist-version"
 
 if [ -f "$VF" ]; then
   # A distribution with a declared version
-  cat "$VF"
+  cat "$VF" | tr -d '\n'
 else
   # Building from Git
   echo -n "`git describe --dirty | tr - _`"
